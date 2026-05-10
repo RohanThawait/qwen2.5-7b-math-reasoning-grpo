@@ -1,0 +1,4 @@
+Benchmark,instruct_baseline,instruct_baseline_delta_vs_baseline,instruct_baseline_delta_vs_sft,sft_checkpoint,sft_checkpoint_delta_vs_baseline,sft_checkpoint_delta_vs_sft,grpo_final,grpo_final_delta_vs_baseline,grpo_final_delta_vs_sft,grpo_model,grpo_model_delta_vs_baseline,grpo_model_delta_vs_sft,sft_model,sft_model_delta_vs_baseline,sft_model_delta_vs_sft
+GSM8K (8-shot),82.64%,—,—,75.51%,-7.13%,—,75.66%,-6.98%,+0.15%,N/A,—,—,N/A,—,—
+MATH/hendrycks_math500 (4-shot),20.60%,—,—,24.20%,+3.60%,—,24.20%,+3.60%,+0.00%,N/A,—,—,N/A,—,—
+ARC-Challenge (25-shot),67.06%,—,—,62.97%,-4.09%,—,62.80%,-4.26%,-0.17%,N/A,—,—,N/A,—,—

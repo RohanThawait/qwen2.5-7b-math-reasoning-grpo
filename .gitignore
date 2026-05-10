@@ -1,0 +1,24 @@
+# Model checkpoints — upload to HuggingFace separately
+evaluation/sft_model/
+evaluation/grpo_model/
+/home/devinder/gnss_phase2/project_7/evaluation/sft_model/
+/home/devinder/gnss_phase2/project_7/evaluation/grpo_model/
+/home/devinder/gnss_phase2/project_7/evaluation/instruct_baseline
+# W&B logs
+wandb/
+
+# Large sample files from lm-eval
+evaluation/**/*.jsonl
+**/*.jsonl
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+main.py
+remove_string.py*.jsonl

@@ -1,0 +1,113 @@
+{
+  "stages": [
+    "instruct_baseline",
+    "sft_checkpoint",
+    "grpo_final",
+    "grpo_model",
+    "sft_model"
+  ],
+  "benchmarks": {
+    "gsm8k": "GSM8K (8-shot)",
+    "math": "MATH/hendrycks_math500 (4-shot)",
+    "arc_challenge": "ARC-Challenge (25-shot)"
+  },
+  "scores": {
+    "instruct_baseline": {
+      "gsm8k": 82.64,
+      "math": 20.6,
+      "arc_challenge": 67.06
+    },
+    "sft_checkpoint": {
+      "gsm8k": 75.51,
+      "math": 24.2,
+      "arc_challenge": 62.97
+    },
+    "grpo_final": {
+      "gsm8k": 75.66,
+      "math": 24.2,
+      "arc_challenge": 62.8
+    },
+    "grpo_model": {
+      "gsm8k": null,
+      "math": null,
+      "arc_challenge": null
+    },
+    "sft_model": {
+      "gsm8k": null,
+      "math": null,
+      "arc_challenge": null
+    }
+  },
+  "deltas": {
+    "instruct_baseline": {
+      "gsm8k": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "math": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "arc_challenge": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      }
+    },
+    "sft_checkpoint": {
+      "gsm8k": {
+        "delta_vs_baseline": -7.13,
+        "delta_vs_sft": null
+      },
+      "math": {
+        "delta_vs_baseline": 3.6,
+        "delta_vs_sft": null
+      },
+      "arc_challenge": {
+        "delta_vs_baseline": -4.09,
+        "delta_vs_sft": null
+      }
+    },
+    "grpo_final": {
+      "gsm8k": {
+        "delta_vs_baseline": -6.98,
+        "delta_vs_sft": 0.15
+      },
+      "math": {
+        "delta_vs_baseline": 3.6,
+        "delta_vs_sft": 0.0
+      },
+      "arc_challenge": {
+        "delta_vs_baseline": -4.26,
+        "delta_vs_sft": -0.17
+      }
+    },
+    "grpo_model": {
+      "gsm8k": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "math": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "arc_challenge": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      }
+    },
+    "sft_model": {
+      "gsm8k": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "math": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      },
+      "arc_challenge": {
+        "delta_vs_baseline": null,
+        "delta_vs_sft": null
+      }
+    }
+  }
+}
