@@ -11,7 +11,7 @@ The model is trained in two stages: a **Supervised Fine-Tuning (SFT) cold start*
 **Base model:** Qwen/Qwen2.5-7B-Instruct  
 **SFT checkpoint:** Available on HuggingFace [link]  
 **GRPO checkpoint:** Available on HuggingFace [link]  
-**W&B training run:** [vocal-armadillo-2](https://wandb.ai/rohanthawait-national-institute-of-technology-karnataka-/H07-reasoning-model/runs/ewjj8op2)
+**W&B training run:** [training-run](https://wandb.ai/rohanthawait-national-institute-of-technology-karnataka-/H07-reasoning-model/runs/ewjj8op2)
 
 ---
 
@@ -35,7 +35,7 @@ The answer is: [final answer]
 ```
 
 **Key training details:**
-- Full parameter finetuning (no LoRA) on H100 80GB
+- Full parameter finetuning (no LoRA) on NVIDIA H100 NVL
 - 2 epochs, effective batch size 32, learning rate 2e-5 with cosine decay
 - Loss masking on prompt tokens — gradients flow only through the reasoning completion
 - Final train loss: 0.3357 | Mean token accuracy: 92.5%
@@ -119,11 +119,6 @@ project_7/
 ├── evaluate_model.sh         # lm-evaluation-harness benchmarking script
 ├── aggregate_results.py      # Results aggregation and comparison table
 ├── verify_setup.py           # Pre-benchmarking environment verification
-├── configs/
-│   ├── sft.yaml              # SFT hyperparameter config
-│   ├── grpo.yaml             # GRPO baseline config
-│   ├── grpo_no_format.yaml   # Ablation: no format reward
-│   └── grpo_with_process.yaml # Ablation: step-level process reward
 └── evaluation/
     ├── instruct_baseline/    # Benchmark results — Qwen2.5-7B-Instruct
     ├── sft_checkpoint/       # Benchmark results — after SFT
@@ -147,7 +142,7 @@ project_7/
 ## Key Technical Decisions
 
 **Why full finetuning instead of LoRA for SFT?**  
-LoRA updates a small fraction of parameters via low-rank adapters. For a cold-start where the goal is installing a new behavioral prior (structured CoT format), full finetuning gives the model more capacity to shift its output distribution. The H100's 80GB VRAM comfortably fits a 7B model for full finetuning.
+LoRA updates a small fraction of parameters via low-rank adapters. For a cold-start where the goal is installing a new behavioral prior (structured CoT format), full finetuning gives the model more capacity to shift its output distribution. The H100's 99GB VRAM comfortably fits a 7B model for full finetuning.
 
 **Why GSM8K only for GRPO?**  
 GRPO requires verifiable reward signals — the model's answer must be checkable programmatically. GSM8K answers are clean numeric values, making automated correctness checking reliable. NuminaMath competition problems have more complex answer formats that increase reward function error rates.
