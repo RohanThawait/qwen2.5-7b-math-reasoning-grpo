@@ -9,10 +9,7 @@ The model is trained in two stages: a **Supervised Fine-Tuning (SFT) cold start*
 ## Model
 
 **Base model:** Qwen/Qwen2.5-7B-Instruct  
-**SFT checkpoint:** Available on HuggingFace [link]  
 **GRPO checkpoint:** Available on HuggingFace [link]  
-**W&B training run report:** [training-run](https://wandb.ai/rohanthawait-national-institute-of-technology-karnataka-/H07-reasoning-model/reports/SFT-and-GRPO-RUN--VmlldzoxNjgzNzkwNw)
-
 ---
 
 ## Training Pipeline
