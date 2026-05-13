@@ -9,7 +9,7 @@ The model is trained in two stages: a **Supervised Fine-Tuning (SFT) cold start*
 ## Model
 
 **Base model:** Qwen/Qwen2.5-7B-Instruct  
-**GRPO checkpoint:** Available on HuggingFace [link]  
+**GRPO checkpoint:** Available on HuggingFace [[link](https://huggingface.co/thawait/qwen2.5-7b-math-reasoning-grpo)]  
 
 ---
 
